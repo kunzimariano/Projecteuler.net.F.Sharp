@@ -5,7 +5,8 @@ module Problem1 =
 //Find the sum of all the multiples of 3 or 5 below 1000.
     
     let sumOfMultiples =
-        seq { for n in 1 .. 999 -> n } |> Seq.filter (fun x -> (x % 3) = 0 || (x % 5) = 0)
+        seq { for n in 1 .. 999 -> n } 
+        |> Seq.filter (fun x -> (x % 3) = 0 || (x % 5) = 0)
         |> Seq.reduce (fun x y -> x + y)
 
     printf "result is: %d" sumOfMultiples
@@ -21,8 +22,12 @@ module Problem2 =
             ( 0, 1)
 
     let result = 
-        fibonacci |> Seq.takeWhile (fun n -> n <  4000000)
+        fibonacci 
+        |> Seq.takeWhile (fun n -> n <  4000000)
         |> Seq.filter (fun x -> (x %  2) =  0 )
         |> Seq.reduce (fun x y -> x + y)
 
     printf "result is: %d" result
+
+module Problem3 =
+    
