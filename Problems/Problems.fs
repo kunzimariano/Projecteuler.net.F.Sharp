@@ -9,9 +9,7 @@ module Problem1 =
             seq { 1..999 }
             |> Seq.filter (fun x -> (x % 3) = 0 || (x % 5) = 0)
             |> Seq.reduce (fun x y -> x + y)
-
         printf "result is: %d" sumOfMultiples
-        ()
 
 module Problem2 = 
     //Even Fibonacci numbers
@@ -24,10 +22,9 @@ module Problem2 =
         let result = 
             fibonacci
             |> Seq.takeWhile (fun n -> n < 4000000)
-            |> Seq.filter (fun x -> (x % 2) = 0)
+            |> Seq.filter (fun x -> Helpers.isEven x)
             |> Seq.reduce (fun x y -> x + y)
         printf "result is: %d" result
-        ()
 
 module Problem3 = 
     //The prime factors of 13195 are 5, 7, 13 and 29.
@@ -40,4 +37,19 @@ module Problem3 =
             |> Seq.filter (fun x -> (Helpers.isFactor x n) && Helpers.isPrime x)
             |> Seq.last
         printf "result is: %d" result
-        ()
+
+module Problem4 = 
+    //A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+    //Find the largest palindrome made from the product of two 3-digit numbers.
+    let printResult() = 
+        let isPalindrome (number : string) = new string(number.ToCharArray() |> Array.rev) = number
+        
+        let result = 
+            seq { 
+                for i in 100..999 do
+                    for j in 100..999 do
+                        yield (i * j)
+            }
+            |> Seq.where (fun x -> isPalindrome (string x))
+            |> Seq.max
+        printf "result is: %d" result

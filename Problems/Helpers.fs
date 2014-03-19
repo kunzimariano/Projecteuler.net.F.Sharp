@@ -7,3 +7,5 @@ module Helpers =
         |> not
     
     let isFactor (candidate : int64) n = (n % candidate) = 0L
+    let isEven n = (n % 2 = 0)
+    let isOdd n = (n % 2 <> 0)
