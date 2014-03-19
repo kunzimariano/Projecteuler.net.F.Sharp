@@ -53,3 +53,15 @@ module Problem4 =
             |> Seq.where (fun x -> isPalindrome (string x))
             |> Seq.max
         printf "result is: %d" result
+
+module Problem5 = 
+    //2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+    //What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+    let printResult() = 
+        let isDivisible n = 
+            seq { 20..-1..11 }
+            |> Seq.exists (fun x -> n % x <> 0)
+            |> not
+        
+        let result = seq { 20..2..300000000 } |> Seq.find (fun x -> (isDivisible x))
+        printf "result is: %d" result
