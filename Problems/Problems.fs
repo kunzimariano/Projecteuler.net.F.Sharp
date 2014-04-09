@@ -112,4 +112,14 @@ module Problem8 =
      
         
         printf "result is: %A "  result
-        
+
+ module Problem10 = 
+//    The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+//    Find the sum of all the primes below two million.
+    let printResult() =
+        let result = 
+            [1L..2000000L]
+            |> Seq.filter (fun x -> Helpers.isPrime x)
+            |> Seq.fold (+) 0L
+
+        printf "result is: %A "  result
