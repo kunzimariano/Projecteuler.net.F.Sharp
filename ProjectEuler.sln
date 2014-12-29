@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ProjectEuler", "ProjectEuler\ProjectEuler.fsproj", "{491FF559-89B6-4625-8940-50E500819942}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Problems", "Problems\Problems.fsproj", "{E8E4B623-C049-459F-8A12-E83EDC633CA7}"
